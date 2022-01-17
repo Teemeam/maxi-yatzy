@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = env => ({
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   mode: env,
   devtool: 'inline-source-map',
   output: {
@@ -65,7 +65,7 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/html/index.html'
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'

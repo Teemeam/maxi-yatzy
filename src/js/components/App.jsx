@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 /* Components */
+import ScoreCard from './ScoreCard/index.jsx';
 
 /* Styles */
 const AppContainer = styled.div`
@@ -11,7 +12,7 @@ const AppContainer = styled.div`
 const App = (props) => {
   return (
     <AppContainer>
-      <div>Toimii!</div>
+      <ScoreCard/>
     </AppContainer>
   );
 };
