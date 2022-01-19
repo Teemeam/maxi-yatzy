@@ -5,7 +5,11 @@ import * as s from './index.styled.js';
 
 const PlayerInfo = (props) => {
   return (<s.Container>
-    <h1>PlayerInfo</h1>
+    <div className='outer-info-wrapper'>
+      <div className='inner-info-wrapper'>
+        {/* ... */}
+      </div>
+    </div>
   </s.Container>);
 };
 
