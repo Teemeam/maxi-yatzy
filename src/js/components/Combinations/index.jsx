@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 /* Styles */
 import * as s from './index.styled.js';
 
-const Combinations = (props) => {
-  return (<s.Container>
+export const Combinations = (props) => {
+  const { playerCount } = props;
+
+  return (<s.Container playerCount={ playerCount }>
     <table>
       <tbody>
         <tr>
@@ -25,9 +28,62 @@ const Combinations = (props) => {
         <tr>
           <td>Sixes</td>
         </tr>
+        <tr>
+          <td>TOTAL</td>
+        </tr>
+        <tr>
+          <td>Bonus</td>
+        </tr>
+        <tr>
+          <td>Pair</td>
+        </tr>
+        <tr>
+          <td>Two pairs</td>
+        </tr>
+        <tr>
+          <td>Three pairs</td>
+        </tr>
+        <tr>
+          <td>Three of a kind</td>
+        </tr>
+        <tr>
+          <td>Four of a kind</td>
+        </tr>
+        <tr>
+          <td>Five of a kind</td>
+        </tr>
+        <tr>
+          <td>Small straight</td>
+        </tr>
+        <tr>
+          <td>Large straight</td>
+        </tr>
+        <tr>
+          <td>Full straight</td>
+        </tr>
+        <tr>
+          <td>Full house</td>
+        </tr>
+        <tr>
+          <td>Castle</td>
+        </tr>
+        <tr>
+          <td>Tower</td>
+        </tr>
+        <tr>
+          <td>Chance</td>
+        </tr>
+        <tr>
+          <td>Maxi Yatzy</td>
+        </tr>
+        <tr>
+          <td>TOTAL</td>
+        </tr>
       </tbody>
     </table>
   </s.Container>);
 };
 
-export default Combinations;
+Combinations.propTypes = {
+  playerCount: PropTypes.number.isRequired,
+}
