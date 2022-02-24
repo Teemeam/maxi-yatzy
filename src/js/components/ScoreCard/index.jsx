@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 /* Components */
+import { GameMenu } from './../GameMenu/index.jsx';
 import { PlayerNames } from './../PlayerNames/index.jsx';
 import { Combinations } from './../Combinations/index.jsx';
 import { PlayerColumn } from './../PlayerColumn/index.jsx';
@@ -40,6 +41,15 @@ export const ScoreCard = (props) => {
       total: 0,
     },
   });
+  const [resetRequested, setResetRequested] = useState(false);
+
+  /* Get game data from localStorage */
+  useEffect(() => {
+    const gameData = localStorage.getItem('gameData');
+    if (gameData) {
+      setData(JSON.parse(gameData));
+    }
+  }, []);
 
   /* Update score */
   function updateScore(player, i, value) {
@@ -74,6 +84,7 @@ export const ScoreCard = (props) => {
     newObj[player].total = total;
 
     setData(newObj);
+    localStorage.setItem('gameData', JSON.stringify(newObj));
     console.log(newObj);
   }
 
@@ -89,9 +100,60 @@ export const ScoreCard = (props) => {
     }
 
     setData(newObj);
+    localStorage.setItem('gameData', JSON.stringify(newObj));
+  }
+
+  /* Request reset */
+  function handleRequest() {
+    if (resetRequested) {
+      setResetRequested(false)
+    } else {
+      setResetRequested(true)
+    }
+  }
+
+  /* Reset game */
+  function resetGame() {
+    setPlayerCount(4);
+    const defaultData = {
+      0: {
+        name: 'Player 1',
+        score: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        upperTotal: 0,
+        bonus: 0,
+        total: 0,
+      },
+      1: {
+        name: 'Player 2',
+        score: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        upperTotal: 0,
+        bonus: 0,
+        total: 0,
+      },
+      2: {
+        name: 'Player 3',
+        score: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        upperTotal: 0,
+        bonus: 0,
+        total: 0,
+      },
+      3: {
+        name: 'Player 4',
+        score: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        upperTotal: 0,
+        bonus: 0,
+        total: 0,
+      },
+    };
+    setData(defaultData);
+    localStorage.removeItem('gameData');
   }
 
   return (<s.Container>
+    <GameMenu
+      handleRequest={ handleRequest }
+      resetRequested={ resetRequested }
+      resetGame={ resetGame }/>
     <PlayerNames
       playerCount={ playerCount }
       data={ data }
@@ -104,6 +166,7 @@ export const ScoreCard = (props) => {
       { playerCount > 0 &&
         <PlayerColumn
           playerCount={ playerCount }
+          data={ data }
           player={ 0 }
           upperTotal={ data[0].upperTotal }
           bonus={ data[0].bonus }
@@ -114,6 +177,7 @@ export const ScoreCard = (props) => {
       { playerCount > 1 &&
         <PlayerColumn 
           playerCount={ playerCount }
+          data={ data }
           player={ 1 }
           upperTotal={ data[1].upperTotal }
           bonus={ data[1].bonus }
@@ -124,6 +188,7 @@ export const ScoreCard = (props) => {
       { playerCount > 2 &&
         <PlayerColumn
           playerCount={ playerCount }
+          data={ data }
           player={ 2 }
           upperTotal={ data[2].upperTotal }
           bonus={ data[2].bonus }
@@ -134,6 +199,7 @@ export const ScoreCard = (props) => {
       { playerCount > 3 &&
         <PlayerColumn
           playerCount={ playerCount }
+          data={ data }
           player={ 3 }
           upperTotal={ data[3].upperTotal }
           bonus={ data[3].bonus }

@@ -16,28 +16,28 @@ export const PlayerNames = (props) => {
             <input
               type='text'
               className='player1'
-              defaultValue={ data[0].name }
+              value={ data[0].name }
               onChange={ e => updateName(0, e.target.value) }/>
           </th>
           <th>
             <input
               type='text'
               className='player2'
-              defaultValue={ data[1].name }
+              value={ data[1].name }
               onChange={ e => updateName(1, e.target.value) }/>
           </th>
           <th>
             <input
               type='text'
               className='player3'
-              defaultValue={ data[2].name }
+              value={ data[2].name }
               onChange={ e => updateName(2, e.target.value) }/>
           </th>
           <th>
             <input
               type='text'
               className='player4'
-              defaultValue={ data[3].name }
+              value={ data[3].name }
               onChange={ e => updateName(3, e.target.value) }/>
           </th>
         </tr>
