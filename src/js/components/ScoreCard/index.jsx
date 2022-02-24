@@ -51,6 +51,11 @@ export const ScoreCard = (props) => {
     }
   }, []);
 
+  /* Load data */
+  function handleLoad(data) {
+    console.log(data);
+  }
+
   /* Update score */
   function updateScore(player, i, value) {
     let newObj = {...data};
@@ -151,6 +156,8 @@ export const ScoreCard = (props) => {
 
   return (<s.Container>
     <GameMenu
+      data={ data }
+      handleLoad={ handleLoad }
       handleRequest={ handleRequest }
       resetRequested={ resetRequested }
       resetGame={ resetGame }/>
