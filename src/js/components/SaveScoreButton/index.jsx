@@ -21,7 +21,7 @@ export const SaveScoreButton = (props) => {
 
   return (<s.Container>
     <form ref={ form } action={ formUrl } method='post' target='hidden-iframe'>
-      <input id='form-input' type='text' name={ inputEntry } value={ JSON.stringify(data) }></input>
+      <input id='form-input' type='text' name={ inputEntry } value={ JSON.stringify(data) } readOnly></input>
       <button type='submit' onClick={ e => submitForm(e) }>Save game</button>
     </form>
     <iframe title='hidden-iframe' name='hidden-iframe' style={{ display: 'none' }}/>

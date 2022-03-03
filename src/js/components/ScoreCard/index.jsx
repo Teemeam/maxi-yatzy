@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { testRegex } from './../../lib/sanitize.js';
 
 /* Components */
 import { GameMenu } from './../GameMenu/index.jsx';
@@ -53,7 +54,11 @@ export const ScoreCard = (props) => {
 
   /* Load data */
   function handleLoad(data) {
-    console.log(data);
+    if (testRegex(data)) {
+      setData(JSON.parse(data));
+    } else {
+      console.log('Data not valid!');
+    }
   }
 
   /* Update score */

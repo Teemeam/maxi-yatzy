@@ -15,7 +15,7 @@ export const GameMenu = (props) => {
   return (<s.Container>
     {/* Load data */}
     <input ref={ loadDataInput } type='text' defaultValue='Game data'/>
-    <button onClick={ handleLoad(loadDataInput.current?.value) }>Load game</button>
+    <button onClick={ () => handleLoad(loadDataInput.current?.value) }>Load game</button>
 
     {/* Reset data */}
     { resetRequested ?
