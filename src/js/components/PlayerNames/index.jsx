@@ -11,32 +11,37 @@ export const PlayerNames = (props) => {
     <table>
       <thead>
         <tr>
-          <th></th>
-          <th>
+          <th/>
+          <th/>
+          <th className='player'>
             <input
               type='text'
               className='player1'
+              maxLength={ 10 }
               value={ data[0].name }
               onChange={ e => updateName(0, e.target.value) }/>
           </th>
-          <th>
+          <th className='player'>
             <input
               type='text'
               className='player2'
+              maxLength={ 10 }
               value={ data[1].name }
               onChange={ e => updateName(1, e.target.value) }/>
           </th>
-          <th>
+          <th className='player'>
             <input
               type='text'
               className='player3'
+              maxLength={ 10 }
               value={ data[2].name }
               onChange={ e => updateName(2, e.target.value) }/>
           </th>
-          <th>
+          <th className='player'>
             <input
               type='text'
               className='player4'
+              maxLength={ 10 }
               value={ data[3].name }
               onChange={ e => updateName(3, e.target.value) }/>
           </th>

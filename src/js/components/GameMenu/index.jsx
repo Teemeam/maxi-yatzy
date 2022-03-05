@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 /* Components */
+import { LoadDataButton } from './../LoadDataButton/index.jsx';
 import { SaveScoreButton } from './../SaveScoreButton/index.jsx';
 
 /* Styles */
@@ -10,12 +11,9 @@ import * as s from './index.styled.js';
 export const GameMenu = (props) => {
   const { data, handleLoad, handleRequest, resetRequested, resetGame } = props;
 
-  const loadDataInput = useRef();
-
   return (<s.Container>
     {/* Load data */}
-    <input ref={ loadDataInput } type='text' defaultValue='Game data'/>
-    <button onClick={ () => handleLoad(loadDataInput.current?.value) }>Load game</button>
+    <LoadDataButton handleLoad={ handleLoad }/>
 
     {/* Reset data */}
     { resetRequested ?

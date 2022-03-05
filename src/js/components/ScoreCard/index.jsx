@@ -67,7 +67,11 @@ export const ScoreCard = (props) => {
 
     /* Update value if there is one */
     if (value) {
-      newObj[player].score[i] = parseInt(value);
+      if (value.includes('-')) {
+        newObj[player].score[i] = '-';
+      } else {
+        newObj[player].score[i] = parseInt(value);
+      }
     } else {
       newObj[player].score[i] = 0;
     }
@@ -75,7 +79,9 @@ export const ScoreCard = (props) => {
     /* Sum upper total */
     let upperTotal = 0;
     for (let y = 0; y < 6; y += 1) {
-      upperTotal += newObj[player].score[y];
+      if (newObj[player].score[y] !== '-') {
+        upperTotal += newObj[player].score[y];
+      }
     }
     newObj[player].upperTotal = upperTotal;
 
@@ -89,7 +95,9 @@ export const ScoreCard = (props) => {
     newObj[player].bonus = bonus;
 
     /* Sum total */
-    let total = newObj[player].score.reduce((partialSum, a) => partialSum + a, 0);
+    let total = newObj[player].score
+      .filter((score) => score !== '-')
+      .reduce((partialSum, a) => partialSum + a, 0);
     total += bonus;
     newObj[player].total = total;
 
@@ -106,7 +114,7 @@ export const ScoreCard = (props) => {
     if (value) {
       newObj[player].name = value;
     } else {
-      newObj[player].name = `Player ${ player + 1 }`;
+      newObj[player].name = '';
     }
 
     setData(newObj);

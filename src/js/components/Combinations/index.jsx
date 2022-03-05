@@ -29,10 +29,10 @@ export const Combinations = (props) => {
           <td>Sixes</td>
         </tr>
         <tr>
-          <td>TOTAL</td>
+          <td className='upper-total'>TOTAL</td>
         </tr>
         <tr>
-          <td>Bonus</td>
+          <td className='bonus'>Bonus</td>
         </tr>
         <tr>
           <td>Pair</td>
@@ -77,7 +77,7 @@ export const Combinations = (props) => {
           <td>Maxi Yatzy</td>
         </tr>
         <tr>
-          <td>TOTAL</td>
+          <td className='total'>TOTAL</td>
         </tr>
       </tbody>
     </table>
