@@ -28,7 +28,7 @@ module.exports = env => ({
           {
             loader: 'file-loader',
             options: {
-              outputPath: 'img/print',
+              outputPath: 'img',
               name: '[name].[ext]'
             },
           },
