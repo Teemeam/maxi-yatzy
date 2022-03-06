@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: relative;
   width: ${ (props) => (`${ 100 / (props.playerCount + 2) }%`) };
   table {
+    position: relative;
     width: 100%;
     border-spacing:0;
     border-collapse: collapse;
@@ -11,16 +12,25 @@ export const Container = styled.div`
     word-break: break-word;
   }
   table > tbody {
+    position: relative;
+    display: inline-block;
     width: 100%;
   }
   table > tbody > tr {
-    //
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 29.8667px;
   }
   table > tbody > tr > td {
+    position: relative;
+    display: inline-block;
+    width: 100%;
     margin: 0;
     padding: 0;
     border-top: 1px dashed black;
     border-right: 2px solid black;
+    box-sizing: border-box;
   }
   table > tbody > tr > td.ones {
     border-top: 1px solid black;

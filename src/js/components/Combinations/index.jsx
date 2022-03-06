@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* Images */
+import logo from './../../../img/maxi-yatzy-logo.jpg';
+
 /* Styles */
 import * as s from './index.styled.js';
 
@@ -11,22 +14,46 @@ export const Combinations = (props) => {
     <table>
       <tbody>
         <tr>
-          <td className='ones'>Ones</td>
+          <td className='ones'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Twos</td>
+          <td className='twos'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Threes</td>
+          <td className='threes'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Fours</td>
+          <td className='fours'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Fives</td>
+          <td className='fives'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Sixes</td>
+          <td className='sixes'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
           <td className='upper-total'>TOTAL</td>
@@ -35,46 +62,102 @@ export const Combinations = (props) => {
           <td className='bonus'>Bonus</td>
         </tr>
         <tr>
-          <td>Pair</td>
+          <td className='pair'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Two pairs</td>
+          <td className='two-pairs'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Three pairs</td>
+          <td className='three-pairs'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Three of a kind</td>
+          <td className='three-of-a-kind'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Four of a kind</td>
+          <td className='four-of-a-kind'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Five of a kind</td>
+          <td className='five-of-a-kind'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Small straight</td>
+          <td className='small-straight'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Large straight</td>
+          <td className='large-straight'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Full straight</td>
+          <td className='full-straight'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Full house</td>
+          <td className='full-house'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Castle</td>
+          <td className='castle'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Tower</td>
+          <td className='tower'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Chance</td>
+          <td className='chance'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
-          <td>Maxi Yatzy</td>
+          <td className='maxi-yatzy'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </td>
         </tr>
         <tr>
           <td className='total'>TOTAL</td>

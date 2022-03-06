@@ -14,11 +14,7 @@ export const PlayerNames = (props) => {
     <table>
       <thead>
         <tr>
-          <th className='logo'>
-            <div>
-              <img src={ logo }/>
-            </div>
-          </th>
+          <th className='logo'>maxi yatzy</th>
           <th>
             <input
               type='text'

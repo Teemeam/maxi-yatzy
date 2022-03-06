@@ -33,23 +33,21 @@ export const Container = styled.div`
     box-sizing: border-box;
   }
   table > thead > tr > th.logo {
+    font-family: 'Kavoon', 'Montserrat', 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 31.2px;
     width: ${ (props) => (`${ 100 / (props.playerCount - 1) }%`) };
     border-top: none;
     overflow: hidden;
-  }
-  table > thead > tr > th.logo > div {
-    position: relative;
-    height: 31.2px;
-    width: 94%;
-    margin: 0 auto;
-  }
-  table > thead > tr > th.logo > div > img {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%,-50%);
+    white-space: nowrap;
+    @media (max-width: 350px) {
+      font-size: 16px;
+    }
+    @media (max-width: 300px) {
+      font-size: 15px;
+    }
   }
   table > thead > tr > th > input {
     width: 100%;
