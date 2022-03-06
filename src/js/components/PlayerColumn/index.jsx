@@ -14,7 +14,7 @@ export const PlayerColumn = (props) => {
           <td className='ones'>
             <input
               type='text'
-              className='ones'
+              className={ 'ones' + (data[player].score[0] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[0] }
               onChange={ e => updateScore(player, 0, e.target.value) }/>
@@ -24,7 +24,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='twos'
+              className={ 'twos' + (data[player].score[1] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[1] }
               onChange={ e => updateScore(player, 1, e.target.value) }/>
@@ -34,7 +34,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='threes'
+              className={ 'threes' + (data[player].score[2] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[2] }
               onChange={ e => updateScore(player, 2, e.target.value) }/>
@@ -44,7 +44,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='fours'
+              className={ 'fours' + (data[player].score[3] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[3] }
               onChange={ e => updateScore(player, 3, e.target.value) }/>
@@ -54,7 +54,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='fives'
+              className={ 'fives' + (data[player].score[4] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[4] }
               onChange={ e => updateScore(player, 4, e.target.value) }/>
@@ -64,7 +64,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='sixes'
+              className={ 'sixes' + (data[player].score[5] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[5] }
               onChange={ e => updateScore(player, 5, e.target.value) }/>
@@ -84,7 +84,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='pair'
+              className={ 'pair' + (data[player].score[6] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[6] }
               onChange={ e => updateScore(player, 6, e.target.value) }/>
@@ -94,7 +94,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='two-pairs'
+              className={ 'two-pairs' + (data[player].score[7] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[7] }
               onChange={ e => updateScore(player, 7, e.target.value) }/>
@@ -104,7 +104,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='three-pairs'
+              className={ 'three-pairs' + (data[player].score[8] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[8] }
               onChange={ e => updateScore(player, 8, e.target.value) }/>
@@ -114,7 +114,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='three-of-a-kind'
+              className={ 'three-of-a-kind' + (data[player].score[9] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[9] }
               onChange={ e => updateScore(player, 9, e.target.value) }/>
@@ -124,7 +124,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='four-of-a-kind'
+              className={ 'four-of-a-kind' + (data[player].score[10] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[10] }
               onChange={ e => updateScore(player, 10, e.target.value) }/>
@@ -134,7 +134,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='five-of-a-kind'
+              className={ 'five-of-a-kind' + (data[player].score[11] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[11] }
               onChange={ e => updateScore(player, 11, e.target.value) }/>
@@ -144,7 +144,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='small-straight'
+              className={ 'small-straight' + (data[player].score[12] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[12] }
               onChange={ e => updateScore(player, 12, e.target.value) }/>
@@ -154,7 +154,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='large-straight'
+              className={ 'large-straight' + (data[player].score[13] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[13] }
               onChange={ e => updateScore(player, 13, e.target.value) }/>
@@ -164,7 +164,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='full-straight'
+              className={ 'full-straight' + (data[player].score[14] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[14] }
               onChange={ e => updateScore(player, 14, e.target.value) }/>
@@ -174,7 +174,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='full-house'
+              className={ 'full-house' + (data[player].score[15] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[15] }
               onChange={ e => updateScore(player, 15, e.target.value) }/>
@@ -184,7 +184,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='castle'
+              className={ 'castle' + (data[player].score[16] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[16] }
               onChange={ e => updateScore(player, 16, e.target.value) }/>
@@ -194,7 +194,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='tower'
+              className={ 'tower' + (data[player].score[17] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[17] }
               onChange={ e => updateScore(player, 17, e.target.value) }/>
@@ -204,7 +204,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='chance'
+              className={ 'chance' + (data[player].score[18] === '-' && ' line') }
               maxLength={ 2 }
               value={ data[player].score[18] }
               onChange={ e => updateScore(player, 18, e.target.value) }/>
@@ -214,7 +214,7 @@ export const PlayerColumn = (props) => {
           <td>
             <input
               type='text'
-              className='maxi-yatzy'
+              className={ 'maxi-yatzy' + (data[player].score[19] === '-' && ' line') }
               maxLength={ 3 }
               value={ data[player].score[19] }
               onChange={ e => updateScore(player, 19, e.target.value) }/>
