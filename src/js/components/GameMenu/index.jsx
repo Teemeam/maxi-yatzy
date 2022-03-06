@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 /* Components */
+import { ResetButton } from './../ResetButton/index.jsx';
+import { ShowLoadSaveButton } from './../ShowLoadSaveButton/index.jsx';
 import { LoadDataButton } from './../LoadDataButton/index.jsx';
 import { SaveScoreButton } from './../SaveScoreButton/index.jsx';
 
@@ -11,20 +13,31 @@ import * as s from './index.styled.js';
 export const GameMenu = (props) => {
   const { data, handleLoad, handleRequest, resetRequested, resetGame } = props;
 
-  return (<s.Container>
-    {/* Load data */}
-    <LoadDataButton handleLoad={ handleLoad }/>
+  const [showLoadSaveMenu, setShowLoadSaveMenu] = useState(false);
 
+  function handleLoadSaveMenu() {
+    if (showLoadSaveMenu) {
+      setShowLoadSaveMenu(false);
+    } else {
+      setShowLoadSaveMenu(true);
+    }
+  }
+
+  return (<s.Container>
     {/* Reset data */}
-    { resetRequested ?
-      <>
-        <button onClick={ handleRequest }>Keep playing</button>
-        <button onClick={ resetGame }>Reset game</button>
-      </> :
-        <button onClick={ handleRequest }>Reset game</button> }
+    <ResetButton resetRequested={ resetRequested } handleRequest={ handleRequest } resetGame={ resetGame }/>
     
+    <ShowLoadSaveButton showLoadSaveMenu={ showLoadSaveMenu } handleLoadSaveMenu={ handleLoadSaveMenu }/>
+
+    {/* Load data */}
+    { showLoadSaveMenu && (
+      <LoadDataButton handleLoad={ handleLoad }/>
+    )}
+
     {/* Save data */}
-    <SaveScoreButton data={ data } />
+    { showLoadSaveMenu && (
+      <SaveScoreButton data={ data } />
+    )}
   </s.Container>);
 };
 

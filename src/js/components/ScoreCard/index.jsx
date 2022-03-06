@@ -165,6 +165,7 @@ export const ScoreCard = (props) => {
     };
     setData(defaultData);
     localStorage.removeItem('gameData');
+    handleRequest();
   }
 
   return (<s.Container>
