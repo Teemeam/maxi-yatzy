@@ -11,7 +11,7 @@ export const PlayerColumn = (props) => {
     <table>
       <tbody>
         <tr>
-          <td>
+          <td className='ones'>
             <input
               type='text'
               className='ones'

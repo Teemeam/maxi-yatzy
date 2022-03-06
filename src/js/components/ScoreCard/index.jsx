@@ -174,6 +174,7 @@ export const ScoreCard = (props) => {
       handleRequest={ handleRequest }
       resetRequested={ resetRequested }
       resetGame={ resetGame }/>
+
     <PlayerNames
       playerCount={ playerCount }
       data={ data }

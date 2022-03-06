@@ -11,7 +11,7 @@ export const Combinations = (props) => {
     <table>
       <tbody>
         <tr>
-          <td>Ones</td>
+          <td className='ones'>Ones</td>
         </tr>
         <tr>
           <td>Twos</td>

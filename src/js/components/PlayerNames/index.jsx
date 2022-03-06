@@ -11,9 +11,8 @@ export const PlayerNames = (props) => {
     <table>
       <thead>
         <tr>
-          <th/>
-          <th/>
-          <th className='player'>
+          <th className='logo'/>
+          <th>
             <input
               type='text'
               className='player1'
@@ -21,7 +20,7 @@ export const PlayerNames = (props) => {
               value={ data[0].name }
               onChange={ e => updateName(0, e.target.value) }/>
           </th>
-          <th className='player'>
+          <th>
             <input
               type='text'
               className='player2'
@@ -29,7 +28,7 @@ export const PlayerNames = (props) => {
               value={ data[1].name }
               onChange={ e => updateName(1, e.target.value) }/>
           </th>
-          <th className='player'>
+          <th>
             <input
               type='text'
               className='player3'
@@ -37,7 +36,7 @@ export const PlayerNames = (props) => {
               value={ data[2].name }
               onChange={ e => updateName(2, e.target.value) }/>
           </th>
-          <th className='player'>
+          <th>
             <input
               type='text'
               className='player4'
