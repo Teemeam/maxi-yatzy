@@ -34,9 +34,22 @@ export const Container = styled.div`
   }
   table > thead > tr > th.logo {
     width: ${ (props) => (`${ 100 / (props.playerCount - 1) }%`) };
-    height: 31.2px;
-    padding: 3px 8px;
     border-top: none;
+    overflow: hidden;
+  }
+  table > thead > tr > th.logo > div {
+    position: relative;
+    height: 31.2px;
+    width: 94%;
+    margin: 0 auto;
+  }
+  table > thead > tr > th.logo > div > img {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
   }
   table > thead > tr > th > input {
     width: 100%;

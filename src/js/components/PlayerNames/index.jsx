@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/* Images */
+import logo from './../../../img/maxi-yatzy-logo.jpg';
+
 /* Styles */
 import * as s from './index.styled.js';
 
@@ -11,7 +14,11 @@ export const PlayerNames = (props) => {
     <table>
       <thead>
         <tr>
-          <th className='logo'/>
+          <th className='logo'>
+            <div>
+              <img src={ logo }/>
+            </div>
+          </th>
           <th>
             <input
               type='text'
