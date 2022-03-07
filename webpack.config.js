@@ -8,12 +8,14 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = env => ({
-  entry: './src/js/index.js',
   mode: env,
   devtool: 'inline-source-map',
+  entry: {
+    bundle: path.resolve(__dirname, 'src/js/index.js')
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'js/[name].js'
   },
   module: {
     rules: [
@@ -23,16 +25,16 @@ module.exports = env => ({
       },
       /* All jpgs to dist/img/print folder */
       {
-        test: /\.(jpe?g)$/,
+        test: /\.(jpe?g|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               outputPath: 'img',
               name: '[name].[ext]'
-            },
-          },
-        ],
+            }
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -54,9 +56,13 @@ module.exports = env => ({
           }).apply(compiler);
         },
       ],
-      namedModules: true,
-      namedChunks: true
-    },
+      moduleIds: 'named',
+      chunkIds: 'named',
+      splitChunks: {
+        chunks: 'all',
+        name: 'vendors',
+      }
+    }
   } : {}),
   devServer: {
     static: {
@@ -65,10 +71,25 @@ module.exports = env => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/html/index.html'
+      filename: 'index.html',
+      template: path.join(__dirname, 'src/html/index.html')
     }),
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        /* Move favicon files to dist folder */
+        {
+          from: 'src/img/favicon',
+          to: 'img/favicon/'
+        },
+        /* Move share image to dist folder */
+        {
+          from: 'share.jpg',
+          to: ''
+        }
+      ]
     })
   ]
 });

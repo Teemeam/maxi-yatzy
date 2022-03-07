@@ -38,6 +38,7 @@ export const Container = styled.div`
     font-size: 18px;
     font-weight: 400;
     line-height: 31.2px;
+    text-align: center;
     width: ${ (props) => (`${ 100 / (props.playerCount - 1) }%`) };
     border-top: none;
     overflow: hidden;
@@ -54,6 +55,7 @@ export const Container = styled.div`
     margin: 0;
     padding: 3px 8px;
     border: none;
+    outline: none;
     box-sizing: border-box;
   }
   table > thead > tr > th,

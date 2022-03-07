@@ -59,11 +59,32 @@ export const Container = styled.div`
   table > tbody > tr > td.bonus {
     border-top: 1px solid black;
   }
+  table > tbody > tr > td.maxi-yatzy {
+    font-family: 'Kavoon', 'Montserrat', 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    overflow: hidden;
+    @media (max-width: 350px) {
+      font-size: 16px;
+    }
+    @media (max-width: 300px) {
+      font-size: 15px;
+    }
+  }
   table > tbody > tr > td > div {
     position: relative;
     height: 29.8667px;
-    width: 94%;
-    margin: 0 auto;
+    width: 85%;
+    margin: 0;
+    @media (max-width: 800px) {
+      width: 94%;
+    }
+    @media (max-width: 500px) {
+      width: 98%;
+    }
   }
   table > tbody > tr > td > div > img {
     position: absolute;
@@ -71,6 +92,6 @@ export const Container = styled.div`
     top: 50%;
     left: 50%;
     width: 100%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, calc(-50% - 1px));
   }
 `;

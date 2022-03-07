@@ -2,7 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /* Images */
-import logo from './../../../img/maxi-yatzy-logo.jpg';
+import ones from './../../../img/ones.svg';
+import twos from './../../../img/twos.svg';
+import threes from './../../../img/threes.svg';
+import fours from './../../../img/fours.svg';
+import fives from './../../../img/fives.svg';
+import sixes from './../../../img/sixes.svg';
+import pair from './../../../img/pair.svg';
+import twoPairs from './../../../img/two-pairs.svg';
+import threePairs from './../../../img/three-pairs.svg';
+import threeOfAKind from './../../../img/three-of-a-kind.svg';
+import fourOfAKind from './../../../img/four-of-a-kind.svg';
+import fiveOfAKind from './../../../img/five-of-a-kind.svg';
+import smallStraight from './../../../img/small-straight.svg';
+import largeStraight from './../../../img/large-straight.svg';
+import fullStraight from './../../../img/full-straight.svg';
+import fullHouse from './../../../img/full-house.svg';
+import castle from './../../../img/castle.svg';
+import tower from './../../../img/tower.svg';
+import chance from './../../../img/tower.svg';
 
 /* Styles */
 import * as s from './index.styled.js';
@@ -16,42 +34,42 @@ export const Combinations = (props) => {
         <tr>
           <td className='ones'>
             <div>
-              <img src={ logo }/>
+              <img src={ ones }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='twos'>
             <div>
-              <img src={ logo }/>
+              <img src={ twos }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='threes'>
             <div>
-              <img src={ logo }/>
+              <img src={ threes }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='fours'>
             <div>
-              <img src={ logo }/>
+              <img src={ fours }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='fives'>
             <div>
-              <img src={ logo }/>
+              <img src={ fives }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='sixes'>
             <div>
-              <img src={ logo }/>
+              <img src={ sixes }/>
             </div>
           </td>
         </tr>
@@ -64,100 +82,96 @@ export const Combinations = (props) => {
         <tr>
           <td className='pair'>
             <div>
-              <img src={ logo }/>
+              <img src={ pair }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='two-pairs'>
             <div>
-              <img src={ logo }/>
+              <img src={ twoPairs }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='three-pairs'>
             <div>
-              <img src={ logo }/>
+              <img src={ threePairs }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='three-of-a-kind'>
             <div>
-              <img src={ logo }/>
+              <img src={ threeOfAKind }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='four-of-a-kind'>
             <div>
-              <img src={ logo }/>
+              <img src={ fourOfAKind }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='five-of-a-kind'>
             <div>
-              <img src={ logo }/>
+              <img src={ fiveOfAKind }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='small-straight'>
             <div>
-              <img src={ logo }/>
+              <img src={ smallStraight }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='large-straight'>
             <div>
-              <img src={ logo }/>
+              <img src={ largeStraight }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='full-straight'>
             <div>
-              <img src={ logo }/>
+              <img src={ fullStraight }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='full-house'>
             <div>
-              <img src={ logo }/>
+              <img src={ fullHouse }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='castle'>
             <div>
-              <img src={ logo }/>
+              <img src={ castle }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='tower'>
             <div>
-              <img src={ logo }/>
+              <img src={ tower }/>
             </div>
           </td>
         </tr>
         <tr>
           <td className='chance'>
             <div>
-              <img src={ logo }/>
+              <img src={ chance }/>
             </div>
           </td>
         </tr>
         <tr>
-          <td className='maxi-yatzy'>
-            <div>
-              <img src={ logo }/>
-            </div>
-          </td>
+          <td className='maxi-yatzy'>maxi yatzy</td>
         </tr>
         <tr>
           <td className='total'>TOTAL</td>

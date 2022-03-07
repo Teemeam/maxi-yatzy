@@ -4,10 +4,10 @@
   "engines": {
     "node": ">=12.14.1"
   },
-  "description": "",
+  "description": "Maxi Yatzy score sheet app.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development --open --hot --config webpack.config.js --env=development",
+    "start": "webpack serve --mode development --config webpack.config.js --env=development --open --hot",
     "build": "webpack --mode production --config webpack.config.js --env=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
