@@ -20,7 +20,7 @@ import fullStraight from './../../../img/full-straight.svg';
 import fullHouse from './../../../img/full-house.svg';
 import castle from './../../../img/castle.svg';
 import tower from './../../../img/tower.svg';
-import chance from './../../../img/tower.svg';
+import chance from './../../../img/chance.svg';
 
 /* Styles */
 import * as s from './index.styled.js';

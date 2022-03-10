@@ -38,6 +38,7 @@ export const Container = styled.div`
   table > tbody > tr > td.upper-total,
   table > tbody > tr > td.bonus,
   table > tbody > tr > td.total {
+    height: 31.2px;
     padding: 3px 8px;
   }
   table > tbody > tr > td.upper-total,

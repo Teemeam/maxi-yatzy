@@ -69,8 +69,10 @@ export const ScoreCard = (props) => {
     if (value) {
       if (value.includes('-')) {
         newObj[player].score[i] = '-';
-      } else {
+      } else if (!isNaN(value)) {
         newObj[player].score[i] = parseInt(value);
+      } else {
+        newObj[player].score[i] = 0;
       }
     } else {
       newObj[player].score[i] = 0;
