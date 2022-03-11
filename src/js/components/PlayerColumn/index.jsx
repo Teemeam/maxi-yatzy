@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { upperPartReady } from './../../lib/playerReady.js';
 
 /* Styles */
 import * as s from './index.styled.js';
@@ -72,12 +73,12 @@ export const PlayerColumn = (props) => {
         </tr>
         <tr>
           <td className='upper-total'>
-            { upperTotal === 0 ? ' ' : upperTotal }
+            { upperTotal === 0 ? '' : upperTotal }
           </td>
         </tr>
         <tr>
-          <td className='bonus'>
-            { bonus === 0 ? '' : bonus === 50 ? 50 : '-' }
+          <td className={ 'bonus' + (upperPartReady(data[player].score) && bonus === 0 ? ' line' : '') }>
+            { upperPartReady(data[player].score) && bonus === 0 ? '-' : bonus === 50 ? 50 : '' }
           </td>
         </tr>
         <tr>

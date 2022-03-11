@@ -64,6 +64,7 @@ export const Container = styled.div`
     font-size: 16px;
     line-height: 1.45;
   }
+  table > tbody > tr > td.line,
   table > tbody > tr > td > input.line {
     background-color: rgba(252, 104, 98, .3);
   }
