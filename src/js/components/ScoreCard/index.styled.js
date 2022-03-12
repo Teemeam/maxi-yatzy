@@ -10,6 +10,5 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 0 0 50px 0;
   }
 `;

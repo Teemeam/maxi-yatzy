@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 /* Components */
 import { GameLogo } from './GameLogo/index.jsx';
 import { ScoreCard } from './ScoreCard/index.jsx';
+import { Footer } from './Footer/index.jsx';
 
 /* Styles */
 const AppContainer = styled.div`
@@ -16,6 +17,7 @@ const App = (props) => {
     <AppContainer>
       <GameLogo/>
       <ScoreCard/>
+      <Footer/>
     </AppContainer>
   );
 };
