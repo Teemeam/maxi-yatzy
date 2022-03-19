@@ -43,6 +43,7 @@ export const ScoreCard = (props) => {
     },
   });
   const [resetRequested, setResetRequested] = useState(false);
+  const [focusedInput, setFocusedInput] = useState([null, null]);
 
   /* Get game data from localStorage */
   useEffect(() => {
@@ -105,7 +106,6 @@ export const ScoreCard = (props) => {
 
     setData(newObj);
     localStorage.setItem('gameData', JSON.stringify(newObj));
-    console.log(newObj);
   }
 
   /* Update player name */
@@ -129,6 +129,46 @@ export const ScoreCard = (props) => {
       setResetRequested(false)
     } else {
       setResetRequested(true)
+    }
+  }
+
+  /* Handle focus */
+  function handleFocus(player, i) {
+    const focused = [player, i];
+    if (focused !== focusedInput) {
+      setFocusedInput(focused);
+    }
+  }
+
+  /* Handle blur */
+  function handleBlur() {
+    if (focusedInput !== [null, null]) {
+      setFocusedInput([null, null]);
+    }
+  }
+
+  /* Handle keydown */
+  function handleKeyDown(player, i, key) {
+    switch(key) {
+      case 'ArrowUp':
+        if (i > 0) {
+          setFocusedInput([player, i - 1]);
+        }
+        break;
+      case 'ArrowRight':
+        if (player < 3) {
+          setFocusedInput([player + 1, i]);
+        }
+        break;
+      case 'ArrowDown':
+        if (i < 19) {
+          setFocusedInput([player, i + 1]);
+        }
+        break;
+      case 'ArrowLeft':
+        if (player > 0) {
+          setFocusedInput([player - 1, i]);
+        }
     }
   }
 
@@ -195,6 +235,10 @@ export const ScoreCard = (props) => {
           upperTotal={ data[0].upperTotal }
           bonus={ data[0].bonus }
           total={ data[0].total }
+          focusedInput={ focusedInput }
+          handleFocus={ handleFocus }
+          handleBlur={ handleBlur }
+          handleKeyDown={ handleKeyDown }
           updateScore={ updateScore }/> }
 
       {/* Player 2 column */}
@@ -206,6 +250,10 @@ export const ScoreCard = (props) => {
           upperTotal={ data[1].upperTotal }
           bonus={ data[1].bonus }
           total={ data[1].total }
+          focusedInput={ focusedInput }
+          handleFocus={ handleFocus }
+          handleBlur={ handleBlur }
+          handleKeyDown={ handleKeyDown }
           updateScore={ updateScore }/> }
       
       {/* Player 3 column */}
@@ -217,6 +265,10 @@ export const ScoreCard = (props) => {
           upperTotal={ data[2].upperTotal }
           bonus={ data[2].bonus }
           total={ data[2].total }
+          focusedInput={ focusedInput }
+          handleFocus={ handleFocus }
+          handleBlur={ handleBlur }
+          handleKeyDown={ handleKeyDown }
           updateScore={ updateScore }/> }
 
       {/* Player 4 column */}
@@ -228,6 +280,10 @@ export const ScoreCard = (props) => {
           upperTotal={ data[3].upperTotal }
           bonus={ data[3].bonus }
           total={ data[3].total }
+          focusedInput={ focusedInput }
+          handleFocus={ handleFocus }
+          handleBlur={ handleBlur }
+          handleKeyDown={ handleKeyDown }
           updateScore={ updateScore }/> }
     </div>
   </s.Container>);
