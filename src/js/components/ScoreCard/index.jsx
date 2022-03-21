@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { testRegex } from './../../lib/sanitize.js';
 
 /* Components */
@@ -11,6 +12,7 @@ import { PlayerColumn } from './../PlayerColumn/index.jsx';
 import * as s from './index.styled.js';
 
 export const ScoreCard = (props) => {
+  const { handleNotification } = props;
   const [playerCount, setPlayerCount] = useState(4);
   const [data, setData] = useState({
     0: {
@@ -216,7 +218,8 @@ export const ScoreCard = (props) => {
       handleLoad={ handleLoad }
       handleRequest={ handleRequest }
       resetRequested={ resetRequested }
-      resetGame={ resetGame }/>
+      resetGame={ resetGame }
+      handleNotification={ handleNotification }/>
 
     <PlayerNames
       playerCount={ playerCount }
@@ -239,7 +242,8 @@ export const ScoreCard = (props) => {
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
-          updateScore={ updateScore }/> }
+          updateScore={ updateScore }/>
+      }
 
       {/* Player 2 column */}
       { playerCount > 1 &&
@@ -254,7 +258,8 @@ export const ScoreCard = (props) => {
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
-          updateScore={ updateScore }/> }
+          updateScore={ updateScore }/>
+      }
       
       {/* Player 3 column */}
       { playerCount > 2 &&
@@ -269,7 +274,8 @@ export const ScoreCard = (props) => {
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
-          updateScore={ updateScore }/> }
+          updateScore={ updateScore }/>
+      }
 
       {/* Player 4 column */}
       { playerCount > 3 &&
@@ -284,7 +290,12 @@ export const ScoreCard = (props) => {
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
-          updateScore={ updateScore }/> }
+          updateScore={ updateScore }/>
+      }
     </div>
   </s.Container>);
 };
+
+ScoreCard.propTypes = {
+  handleNotification: PropTypes.func.isRequired
+}

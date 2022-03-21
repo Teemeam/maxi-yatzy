@@ -11,7 +11,7 @@ import { SaveScoreButton } from './../SaveScoreButton/index.jsx';
 import * as s from './index.styled.js';
 
 export const GameMenu = (props) => {
-  const { data, handleLoad, handleRequest, resetRequested, resetGame } = props;
+  const { data, handleLoad, handleRequest, resetRequested, resetGame, handleNotification } = props;
 
   const [showLoadSaveMenu, setShowLoadSaveMenu] = useState(false);
 
@@ -36,7 +36,7 @@ export const GameMenu = (props) => {
 
     {/* Save data */}
     { showLoadSaveMenu && (
-      <SaveScoreButton data={ data } />
+      <SaveScoreButton data={ data } handleNotification={ handleNotification }/>
     )}
   </s.Container>);
 };
@@ -47,4 +47,5 @@ GameMenu.propTypes = {
   handleRequest: PropTypes.func.isRequired,
   resetRequested: PropTypes.bool.isRequired,
   resetGame: PropTypes.func.isRequired,
+  handleNotification: PropTypes.func.isRequired,
 }

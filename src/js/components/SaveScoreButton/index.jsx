@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as s from './index.styled.js';
 
 export const SaveScoreButton = (props) => {
-  const { data } = props;
+  const { data, handleNotification } = props;
 
   const form = useRef();
   const [formUrl, setFormUrl] = useState('https://docs.google.com/forms/d/e/1FAIpQLSdO7gEH9oXZmy6jXkit_x6wnt_7oXT-6I2cQGeqyFJ7nirKUA/formResponse');
@@ -16,6 +16,7 @@ export const SaveScoreButton = (props) => {
     e.preventDefault();
     if (form.current) {
       form.current.submit();
+      handleNotification();
     }
   }
 
@@ -30,4 +31,5 @@ export const SaveScoreButton = (props) => {
 
 SaveScoreButton.propTypes = {
   data: PropTypes.object.isRequired,
+  handleNotification: PropTypes.func.isRequired
 }

@@ -1,6 +1,6 @@
 {
   "name": "maxi-yatzy",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "node": ">=12.14.1"
   },
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@emotion/core": "^11.0.0",
+    "@emotion/css": "^11.7.1",
     "@emotion/styled": "^11.8.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
