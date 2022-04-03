@@ -11,8 +11,8 @@ export const Button = styled.button`
   padding: 8px 12px;
   border: 2px solid black;
   border-radius: ${ props => props.loadDataButton ? '0 10px 10px 0' : '10px' };
-  background-color: ${ props => props.showLoadSaveMenu ? 'black' : 'white' };
-  color: ${ props => props.showLoadSaveMenu ? 'white' : 'black' };
+  background-color: ${ props => props.showLoadSaveMenu || props.showTotal ? 'black' : 'white' };
+  color: ${ props => props.showLoadSaveMenu || props.showTotal ? 'white' : 'black' };
   cursor: pointer;
   :hover {
     background-color: black;

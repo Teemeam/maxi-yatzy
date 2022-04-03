@@ -14,6 +14,7 @@ export const PlayerColumn = (props) => {
     bonus,
     total,
     focusedInput,
+    showTotal,
     handleFocus,
     handleBlur,
     handleKeyDown,
@@ -330,11 +331,13 @@ export const PlayerColumn = (props) => {
               onChange={ e => updateScore(player, 19, e.target.value) }/>
           </td>
         </tr>
-        <tr>
-          <td className='total'>
-            { total }
-          </td>
-        </tr>
+        { showTotal && (
+          <tr>
+            <td className='total'>
+              { total }
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   </s.Container>);
@@ -348,6 +351,7 @@ PlayerColumn.propTypes = {
   bonus: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
   focusedInput: PropTypes.array.isRequired,
+  showTotal: PropTypes.bool.isRequired,
   handleFocus: PropTypes.func.isRequired,
   handleBlur: PropTypes.func.isRequired,
   handleKeyDown: PropTypes.func.isRequired,

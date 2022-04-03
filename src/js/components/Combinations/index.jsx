@@ -26,7 +26,7 @@ import chance from './../../../img/chance.svg';
 import * as s from './index.styled.js';
 
 export const Combinations = (props) => {
-  const { playerCount } = props;
+  const { playerCount, showTotal } = props;
 
   return (<s.Container playerCount={ playerCount }>
     <table>
@@ -173,9 +173,11 @@ export const Combinations = (props) => {
         <tr>
           <td className='maxi-yatzy'>maxi yatzy</td>
         </tr>
-        <tr>
-          <td className='total'>TOTAL</td>
-        </tr>
+        { showTotal && (
+          <tr>
+            <td className='total'>TOTAL</td>
+          </tr>
+        )}
       </tbody>
     </table>
   </s.Container>);
@@ -183,4 +185,5 @@ export const Combinations = (props) => {
 
 Combinations.propTypes = {
   playerCount: PropTypes.number.isRequired,
+  showTotal: PropTypes.bool.isRequired,
 }

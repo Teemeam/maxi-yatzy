@@ -7,6 +7,7 @@ import { GameMenu } from './../GameMenu/index.jsx';
 import { PlayerNames } from './../PlayerNames/index.jsx';
 import { Combinations } from './../Combinations/index.jsx';
 import { PlayerColumn } from './../PlayerColumn/index.jsx';
+import { ShowTotalButton } from './../ShowTotalButton/index.jsx';
 
 /* Styles */
 import * as s from './index.styled.js';
@@ -46,6 +47,7 @@ export const ScoreCard = (props) => {
   });
   const [resetRequested, setResetRequested] = useState(false);
   const [focusedInput, setFocusedInput] = useState([null, null]);
+  const [showTotal, setShowTotal] = useState(true);
 
   /* Get game data from localStorage */
   useEffect(() => {
@@ -212,6 +214,15 @@ export const ScoreCard = (props) => {
     handleRequest();
   }
 
+  /* Handle show total */
+  function handleShowTotal() {
+    if (showTotal) {
+      setShowTotal(false)
+    } else {
+      setShowTotal(true)
+    }
+  }
+
   return (<s.Container>
     <GameMenu
       data={ data }
@@ -227,7 +238,7 @@ export const ScoreCard = (props) => {
       updateName={ updateName }/>
 
     <div className='tbody-wrapper'>
-      <Combinations playerCount={ playerCount }/>
+      <Combinations playerCount={ playerCount } showTotal={ showTotal }/>
 
       {/* Player 1 column */}
       { playerCount > 0 &&
@@ -239,6 +250,7 @@ export const ScoreCard = (props) => {
           bonus={ data[0].bonus }
           total={ data[0].total }
           focusedInput={ focusedInput }
+          showTotal={ showTotal }
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
@@ -255,6 +267,7 @@ export const ScoreCard = (props) => {
           bonus={ data[1].bonus }
           total={ data[1].total }
           focusedInput={ focusedInput }
+          showTotal={ showTotal }
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
@@ -271,6 +284,7 @@ export const ScoreCard = (props) => {
           bonus={ data[2].bonus }
           total={ data[2].total }
           focusedInput={ focusedInput }
+          showTotal={ showTotal }
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
@@ -287,12 +301,15 @@ export const ScoreCard = (props) => {
           bonus={ data[3].bonus }
           total={ data[3].total }
           focusedInput={ focusedInput }
+          showTotal={ showTotal }
           handleFocus={ handleFocus }
           handleBlur={ handleBlur }
           handleKeyDown={ handleKeyDown }
           updateScore={ updateScore }/>
       }
     </div>
+
+    <ShowTotalButton showTotal={ showTotal } handleShowTotal={ handleShowTotal }/>
   </s.Container>);
 };
 
